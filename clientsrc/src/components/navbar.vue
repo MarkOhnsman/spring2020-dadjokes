@@ -59,7 +59,7 @@ export default {
       this.$store.dispatch("getProfile");
     },
     async logout() {
-      await this.$auth.logout();
+      await this.$auth.logout({ returnTo: "/" });
       this.$store.dispatch("resetBearer");
       this.$router.push({ name: "home" });
     }
